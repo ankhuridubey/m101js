@@ -1,0 +1,1 @@
+db.data.find({ '$and': [ { 'Wind Direction': {'$gte': 180}}, {'Wind Direction': {'$lte': 360}} ] }, {'State': 1, 'Temperature': 1}).sort({'Temperature': 1}).limit(1)

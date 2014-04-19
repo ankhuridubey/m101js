@@ -1,0 +1,14 @@
+use weather
+
+california = db.data.find({'State': 'California'}, {'State': 1, 'Temperature': 1}).sort({'State': 1, 'Temperature': -1}).limit(1)
+print(california)
+db.data.update({'_id': california['_id']}, {'$set': {'month_high': true}})
+
+vermont = db.data.find({'State': 'Vermont'}, {'State': 1, 'Temperature': 1}).sort({'State': 1, 'Temperature': -1}).limit(1)
+db.data.update({'_id': vermont['_id']}, {'$set': {'month_high': true}})
+
+newMexico = db.data.find({'State': 'New Mexico'}, {'State': 1, 'Temperature': 1}).sort({'State': 1, 'Temperature': -1}).limit(1)
+db.data.update({'_id': newMexico['_id']}, {'$set': {'month_high': true}})
+
+florida = db.data.find({'State': 'Florida'}, {'State': 1, 'Temperature': 1}).sort({'State': 1, 'Temperature': -1}).limit(1)
+db.data.update({'_id': florida['_id']}, {'$set': {'month_high': true}})
